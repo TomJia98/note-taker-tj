@@ -89,7 +89,9 @@ const handleNoteDelete = (e) => {
     activeNote = {};
   }
 
-  deleteNote(noteId).then(window.location.reload());
+  deleteNote(noteId)
+    .then(window.location.reload());
+    // this line has been changed from the original. original .then wouldnt run correctly
 };
 
 // Sets the activeNote and displays it

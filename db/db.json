@@ -1,1 +1,7 @@
-[]
+[
+    {
+        "title": "test note",
+        "text": "test note text",
+        "id": 2
+    }
+]

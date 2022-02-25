@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const fs = require("fs");
 const PORT = 3001;
-const writeFile = require("./helpers/writeFile")
+const writeFile = require("./helpers/writeFile");
+const { v4: uuidv4 } = require('uuid');
 // setting dependencies
 
 
@@ -40,9 +41,10 @@ app.post('/api/notes', (req, res) => {
           parsedNotes = JSON.parse(data);
           }// checks if notes db contains anything, if it does, sets parsedNotes to the notes db
 
-          newNote.id = (parsedNotes.length + 1)
+          newNote.id = uuidv4();
+
           parsedNotes.push(newNote);
-          //adds an id to the new note, and adds it to the other notes
+          //adds a unique id to the new note, and adds it to the other notes
           writeFile(parsedNotes);
           //writes the updated notes to the db
         }

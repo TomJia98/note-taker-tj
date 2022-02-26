@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
 const fs = require("fs");
-const PORT = 3001;
 const writeFile = require("./helpers/writeFile");
 const { v4: uuidv4 } = require('uuid');
 // setting dependencies
 
 
+const PORT = process.env.PORT || 3001;
 const app = express();
 //setting express
 

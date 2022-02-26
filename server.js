@@ -6,7 +6,6 @@ const { v4: uuidv4 } = require('uuid');
 // setting dependencies
 
 
-const PORT = process.env.PORT || 3001;
 const app = express();
 //setting express
 
@@ -73,6 +72,6 @@ app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );//all routes that arnt specified are sent to the index.html file
 
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
+app.listen(process.env.PORT || 3001, () =>
+console.log("server is live")
 );
